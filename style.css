@@ -19,19 +19,19 @@ ul {
 
 .wrapper {
     margin: 0 auto;
-    max-width: 1120px;
+    max-width: 1140px;
     padding: 0 30px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .wrapper {
     padding: 0 16px;
    }
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 767px) {
     .wrapper {
-    padding: 0 8px;
+    padding: 0 16px;
    }
 }
 /* start head style */
@@ -48,246 +48,362 @@ ul {
 
 .head__logo {
     display: flex;
-    align-items: flex-end;
+    align-items: center; /* Изменено на center, чтобы выровнять иконку поиска по центру */
     gap: 41px;
+}
+
+.head__ligo-link {
+    /* Стили для ссылки логотипа */
+    display: block; /* Чтобы ссылка занимала всю область картинки */
+}
+
+.head__ligo-img {
+    /* Стили для изображения логотипа */
+    display: block; /* Убирает лишние отступы под картинкой */
+    max-width: 100%; /* Чтобы изображение не выходило за рамки контейнера */
+    height: auto; /* Чтобы изображение сохраняло пропорции */
+}
+
+.head__link {
+    /* Общие стили для ссылок */
+    display: block; /* Чтобы ссылка занимала всю область картинки */
+}
+
+.head__log-menu {
+    /* Стили для иконки меню (AI) */
+    display: block; /* Убирает лишние отступы под картинкой */
+    max-width: 100%; /* Чтобы изображение не выходило за рамки контейнера */
+    height: auto; /* Чтобы изображение сохраняло пропорции */
+}
+
+.head__nav {
+    /* Стили для навигации */
 }
 
 .head__list {
     display: flex;
     align-items: center;
     gap: 33px;
+    list-style: none; /* Убирает маркеры списка */
+    padding: 0; /* Убирает стандартные отступы списка */
+    margin: 0; /* Убирает стандартные отступы списка */
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .head {
-        padding: 19px 16px;
-   }
+.head__item {
+    /* Стили для элементов списка */
+}
 
-   .head__nav {
+.head__link-img {
+    /* Стили для изображений в ссылках навигации (Burger, User, Card) */
+    display: block; /* Убирает лишние отступы под картинкой */
+    max-width: 100%; /* Чтобы изображение не выходило за рамки контейнера */
+    height: auto; /* Чтобы изображение сохраняло пропорции */
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /*  Стили для экранов 768px - 1024px */
+
+  .head {
+    /* Например, изменить отступы, ширину, или позиционирование элементов */
+    padding: 19px 16px;
+  }
+
+  .head__logo {
+    /* Уменьшить размер логотипа или изменить его позицию */
+    width: auto;
+  }
+  .head__ligo-img {
+    width: 44px;
+  }
+
+  .head__nav {
     position: relative;
-   }
+    /* Изменить расположение навигации, если нужно */
+  }
 
-   .head__nav::after {
+  .head__nav::after {
     position: absolute;
     content: '5';
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
+    color: rgba(255, 255, 255, 1);
     width: 19px;
     height: 19px;
     border-radius: 50px;
-    background-color: #F16D7F;
-    top: -5px;
-    left: 156px;
-   }
+    background-color: rgba(241, 109, 127, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -4px;
+    left: 154px;
+  }
+
+  .head__list {
+    /* Поменять отступы или размер иконок в списке */
+  }
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
-    .head {
+@media (min-width: 320px) and (max-width: 767px) {
+  /* Стили для экранов 320px - 767px (мобильные) */
+
+  .head {
+    /*  Изменить отступы, чтобы контент не прижимался к краям экрана */
     padding: 18px 0;
-   }
+  }
 
-   .head__item:nth-child(2), .head__item:last-child {
-    visibility: hidden;
+  .head__logo {
+    /* Возможно, логотип нужно уменьшить или скрыть второй элемент (ссылку с иконкой поиска) */
+    width: 100%;
+    text-align: center;
+  }
+
+  .head__ligo-img {
+    /* Сделаем логотип меньше для мобильных экранов */
+    width: 44px;
+
+  }
+
+  .head__item:nth-child(2), .head__item:last-child {
+    /* visibility: hidden; */
     display: none;
+  }
+
+  .head__nav {
+    /* Сделать навигацию более компактной (например, выпадающее меню) или перенести ее вниз */
+  }
+  .head__list {
+    padding: 0;
+    margin: 0;
+  }
 }
 
-}
+
 /* start head poster */
 .poster {
-    background-color: #F1E4E6;
+  background-color: #F1E4E6;
+  margin-bottom: 65px;
 }
 
 .container__poster {
-    display: flex;
-    align-items: center;
-    gap: 63px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Равномерное распределение пространства между блоками */
+}
+
+.poster__left {
+  width: 50%; /* Занимает 50% ширины контейнера */
+  display: flex;
+  justify-content: center; /* Горизонтальное центрирование изображения */
+  align-items: center; /* Вертикальное центрирование изображения (если нужно) */
 }
 
 .poster__left-img {
-    min-height: 764px;
-    margin-left: -225px;
+    max-width: 100%; /*  Гарантирует, что изображение не будет больше ширины контейнера  */
+    height: auto; /*  Автоматическая высота для сохранения пропорций  */
+
+}
+
+.poster__right {
+  padding-left: 91px;
+  width: 50%; /* Занимает 50% ширины контейнера */
 }
 
 .poster__right-text {
-    max-width: 437px;
-    position: relative;
+  max-width: 437px;
+  position: relative;
+  padding-left: 16px;
 }
 
 .poster__right-text::after {
-    position: absolute;
-    content: '';
-    width: 12px;
-    height: 93px;
-    background-color: #F16D7F;
-    left: -16px;
-    top: 0;
+  position: absolute;
+  content: '';
+  width: 12px;
+  height: 93px;
+  background-color: #F16D7F;
+  left: -16px;
+  top: 12px;
 }
 
 .poster__title {
-    font-family: Lato;
-    font-weight: 900;
-    font-size: 48px;
-    line-height: 100%;
-    color: #222222;
+  font-family: Lato;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 1.2; /* Улучшенная читаемость, используем относительные единицы */
+  color: #222222;
+  margin: 0; /* Убираем стандартные отступы заголовка */
 }
 
 .poster__title-big {
-    font-weight: 700;
-    font-size: 32px;
-    text-transform: uppercase;
+  font-weight: 700;
+  font-size: 32px;
+  text-transform: uppercase;
+  /* display: block;  */
 }
 
 .poster__title-text {
-    color: #F16D7F;
+  color: #F16D7F;
+  /* display: block;  */
 }
 
-.poster__left, .poster__right {
-    width: 50%;
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .container__poster {
-    display: flex;
-    align-items: center;
-    gap: 39px;
+        display: flex;
+        align-items: center;
+    }
+
+    .poster__left {
+        width: 50%;
+    }
+
+    .poster__left-img {
+        max-width: 100%; /* чтобы не выходило за пределы блока */
+        height: auto;
+        object-fit: contain; /* сохраняет пропорции */
+        transition: transform 0.3s ease;
+    }
+    /* При желании можно добавить эффект при наведении */
+    .poster__left-img:hover {
+        transform: scale(1.05);
+    }
+
+    .poster__right {
+        width: 50%;
+        padding-left: 67px;
+    }
+
+    .poster__right-text {
+        max-width: 311px;
+        position: relative;
+        /* Пример декоративного элемента после текста */
+    }
+
+    /* Если нужен декоративный элемент после блока */
+    .poster__right-text::after {
+        content: "";
+        display: block;
+        width: 12px;
+        height: 92px;
+        background-color: rgba(241, 109, 127, 1); /* цвет по желанию */
+        position: absolute;
+        left: -11px;
+        top: 8px;
+    }
+
+    /* Заголовок */
+    .poster__title {
+        font-size: 2.75rem; /* примерно 44px */
+        line-height: 1.2;
+    }
+
+    /* Подзаголовки внутри заголовка */
+    .poster__title-big {
+        font-size: 1.5rem; /* примерно 24px */
+        /* display: block; */
+    }
+
+    .poster__title-text {
+        font-size: 1.5rem; /* примерно 24px */
+        /* display: block; */
+    }
 }
 
-.poster__left-img {
-    max-width: 386px;
-    min-height: auto;
-    margin-left: 2px;
-}
-
-.poster__left {
-    width: 51%;
-}
-
-.poster__right {
-    width: 49%;
-    padding-left: 17px;
-}
-
-.post__title {
-    font-size: 44px;
-}
-
-.poster__title-big {
-    font-size: 24px;
-}
-
-.poster__title-text {
-    font-size: 24px;
-}
-
-.poster__right-text::after {
-    width: 12px;
-    height: 92px;
-}
-
-.poster__right-text {
-    max-width: 311px;
-}
-}
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
-.poster {
-    margin-bottom: 65px;
+    .poster {
+        margin-bottom: 4rem; /* заменил 65px на rem */
+    }
+
+    .poster__left {
+        display: none; /* достаточно этого */
+    }
+
+    .poster__right {
+        width: 100%;
+        min-height: auto; /* лучше не фиксировать высоту, пусть контент определяет */
+        padding: 2rem 2rem; /* добавим внутренние отступы */
+        box-sizing: border-box;
+    }
+
+    .poster__right-text {
+        max-width: 100%; /* чтобы не выходило за экран */
+        min-height: auto;
+        padding: 6rem 0 6rem 1.5rem; /* уменьшил отступы сверху/снизу */
+        position: relative;
+    }
+
+    /* Псевдоэлемент для декоративной линии */
+    .poster__right-text::after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 61px;
+        top: 50%; /* центрируем по вертикали */
+        left: 0;
+        transform: translateY(-50%);
+        background-color: rgba(241, 109, 127, 1); /* или нужный цвет */
+    }
+
+    /* Заголовок */
+    .poster__title {
+        font-size: 2.375rem; /* ~38px */
+        line-height: 1.1;
+    }
+
+    .poster__title-big,
+    .poster__title-text {
+        font-size: 1.25rem; /* ~20px */
+        /* display: block; */
+    }
 }
 
-.poster__left {
-    visibility: hidden;
-    display: none;
-}
-
-.poster__right {
-    width: 100%;
-    min-height: 363px;
-}
-
-.poster__right-text {
-    max-width: 263px;
-    min-height: 66px;
-    padding: 148px 0px 149px 37px;
-}
-
-.post__title {
-    font-size: 38px;
-}
-
-.poster__title-big {
-    font-size: 20px;
-}
-
-.poster__title-text {
-    font-size: 20px;
-}
-
-.poster__right-text::after {
-    width: 12px;
-    height: 61px;
-    top: 160px;
-    left: 0;
-
-}
-}
 /* start offer style */
 .offer {
-    padding: 65px 0 96px;
+    margin-bottom: 96px;
 }
 
 .container__offer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 30px;
+    justify-content: space-between; /* Чтобы элементы равномерно распределялись */
+    gap: 30px; /* Расстояние между элементами */
 }
 
 .offer__item {
-  flex: 1 1 calc((100% - 390px) / 3); /* три элемента в ряд с учётом gap */
-}
-
-.offer__item-big {
-  flex: 1 1 100%; /* занимает всю ширину контейнера */
-}
-
-
-.offer__item:first-child {
+    flex: 1 1 calc((100% - 60px) / 3); /* три элемента в ряд с учётом gap*/ /*убрал 390 px на 60 что бы адекватно считал*/
     min-height: 260px;
-    background-image: url(./images/women.png);
     background-repeat: no-repeat;
+    background-size: cover; /* Изображение масштабируется, чтобы заполнить контейнер, обрезая его при необходимости */
+    background-position: center; /* Изображение центрируется в контейнере */
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center; /* Центрируем текст */
+}
+
+.offer__item:first-child {
+    background-image: url(./images/women.png);
 }
 
 .offer__item:nth-child(2) {
-    min-height: 260px;
     background-image: url(./images/men.jpg);
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
 }
 
 .offer__item:nth-child(3) {
-    min-height: 260px;
     background-image: url(./images/kids.jpg);
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
 }
 
 .offer__item-big {
+    flex: 1 1 100%; /* занимает всю ширину контейнера */
+    min-height: 180px; /* Высота большая картинка */
     background-image: url(./images/trandy.jpg);
     background-repeat: no-repeat;
-    padding: 65px;
+    background-size: cover; /*  Изображение масштабируется, чтобы заполнить контейнер, обрезая его при необходимости */
+    background-position: center; /* Изображение центрируется в контейнере */
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center; /* Центрируем текст */
+    padding: 20px; /* Отступ внутри элемента */
+    box-sizing: border-box; /* Учитываем padding и border в ширине */
 }
-
 
 .offer__title {
     display: flex;
@@ -298,6 +414,7 @@ ul {
     line-height: 100%;
     text-align: center;
     color: #FFFFFF;
+    text-shadow: 2px 2px 4px #000000; /* Добавляем тень для лучшей читаемости на фоне картинки */
 }
 
 .offer__title-text {
@@ -308,53 +425,63 @@ ul {
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .offer {
-    padding: 65px 0 109px;
-}
+        margin-bottom: 109px;
+    }
 
-.container__offer {
-    gap: 20px;
-}
+    .container__offer {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: space-between; /* по умолчанию */
+    }
 
-.offer__item {
-  flex: 1 1 calc((100% - 252px) / 3); /* три элемента в ряд с учётом gap */
-}
+    .offer__item {
+        flex: 1 1 calc((100% - 40px) / 3); /* 3 элемента с учётом gap */
+        min-height: 247px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.offer__item-big {
-  flex: 1 1 100%; /* занимает всю ширину контейнера */
-}
-
-.offer__item:first-child {
-    min-height: 167px;
-    background-size: contain;
-}
-
-.offer__item:nth-child(2) {
-    min-height: 167px;
-    background-size: contain;
-}
-
-.offer__item:nth-child(3) {
-    min-height: 167px;
-    background-size: contain;
-}
-
-.offer__item-big {
-    background-size: contain;
-}
+    .offer__item-big {
+        flex: 1 1 100%;
+        min-height: 116px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .offer {
-    margin-bottom: 64px;
+        margin-bottom: 64px;
+    }
+
+    .container__offer {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .offer__item-big {
+        width: 100%;
+        min-height: 111px; /* высота по содержимому */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
-.container__offer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: 32px;
-}
-}
 
 /* start product style */
 
@@ -363,147 +490,246 @@ ul {
 }
 
 .container__product {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    text-align: center; /* Центрирование заголовка и текста */
 }
 
 .product__title {
     font-family: Lato;
     font-weight: 400;
+    line-height: 1.2;
     font-size: 30px;
-    line-height: 100%;
-    color: #222;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
+    color: rgba(34, 34, 34, 1);
 }
 
 .product__text {
     font-family: Lato;
     font-weight: 400;
     font-size: 14px;
-    line-height: 100%;
-    color: #9F9F9F;
-    margin-bottom: 48px;
+    color: rgba(159, 159, 159, 1);
+    margin-bottom: 30px;
 }
 
 .product__cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Равномерное распределение карточек */
+    gap: 30px; /* Отступы между карточками */
     margin-bottom: 48px;
 }
 
 .product__card {
-    max-width: 360px;
-    display: flex;
-    flex-direction: column;
+    width: calc((100% - 60px) / 3); /* Три карточки в ряд */
+    border: 1px solid rgba(248, 248, 248);
+    box-sizing: border-box; /* Включаем box-sizing */
+    text-align: left; /* Выравниваем текст в карточке по левому краю */
+    background-color: rgba(248, 248, 248);
+}
+
+.product__image {
+    width: 100%;
+    max-height: 420px; /* Ограничиваем максимальную высоту изображений */
+    object-fit: cover; /* Масштабируем изображения с обрезкой */
+    margin-bottom: 10px;
 }
 
 .product__info {
-    padding: 24px 28px 20px 16px;
-    background-color: #F8F8F8;
+    padding: 24px 29px 24px 16px;
 }
 
 .product__subtitle {
     font-family: Lato;
     font-weight: 400;
     font-size: 13px;
-    line-height: 100%;
-    color: #000000;
-    margin-bottom: 12px;
+    line-height: 1.2;
+    margin-bottom: 5px;
 }
 
 .product__sbt {
     font-family: Lato;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 14px;
-    line-height: 100%;
-    color: #5D5D5D;
-    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgba(93, 93, 93, 1);
+    margin-bottom: 16px;
 }
 
 .product__price {
     font-family: Lato;
     font-weight: 400;
     font-size: 16px;
-    line-height: 100%;
-    color: #F16D7F;
+    /* font-weight: bold; */
+    margin-top: 10px;
+    color: rgba(241, 109, 127, 1);
 }
 
 .product__btn {
-    border: 1px solid #FF6A6A;
-    padding: 15px 39px;
-    color: #F26376;
+    border: 1px solid rgba(242, 99, 118, 1);
     background-color: transparent;
+    color: rgba(242, 99, 118, 1);
     font-family: Lato;
     font-weight: 400;
     font-size: 16px;
-    line-height: 100%;
+    line-height: 1.2;
+    padding: 1rem 2rem;
+}
+
+
+/* Стили для планшетов (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .product {
+        margin-bottom: 70px;
+    }
+
+    .product__title {
+        margin-bottom: 3px;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .product__text {
+        margin-bottom: 72px;
+        font-size: 1rem;
+        color: #555;
+    }
+
+    .product__cards {
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-bottom: 32px;
+    }
+
+    .product__card {
+        width: 100%;
+    }
+
+    .product__image {
+        margin-bottom: 0;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .product__info {
+        padding: 25px 28px 20px 16px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product__subtitle {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+
+    .product__sbt {
+        font-weight: 300;
+        font-size: 0.9rem;
+        color: #666;
+        flex-grow: 1; /* Чтобы описание занимало доступное пространство */
+    }
+
+    .product__price {
+        font-size: 1.1rem;
+    }
+}
+
+/* Стили для мобильных устройств (320px - 767px) */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .product {
+        margin-bottom: 85px;
+    }
+
+    .product__title {
+        font-size: 1.75rem;
+        font-weight: bold;
+        margin-bottom: 12px;
+    }
+
+    .product__text {
+        text-align: center;
+        margin-bottom: 65px;
+        font-size: 1rem;
+        color: #555;
+    }
+
+    .product__cards {
+        display: grid;
+        grid-template-columns: 1fr; /* один столбец */
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+
+    .product__card {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product__image {
+        margin-bottom: 0;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .product__info {
+        background-color: rgba(248, 248, 248);
+        padding: 20px 16px 20px 16px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product__subtitle {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .product__sbt {
+        font-weight: 300;
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .product__price {
+        margin-top: 14px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: rgba(241, 109, 127, 1);
+    }
+}
+
+/* Общие стили кнопки */
+.product__btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: transparent; /* или другой цвет */
+    color: rgba(242, 99, 118, 1);
+    border: 1px solid rgba(242, 99, 118, 1);
+    cursor: pointer;
 }
 
 .product__btn:hover {
-    background-color: #F26376;
-    color: #000000; 
+    background-color: #333; /* эффект наведения */
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-.product {
-    margin-bottom: 70px;
-}
-
-.product__title {
-    margin-bottom: 3px;
-}
-
-.product__text {
-    margin-bottom: 72px;
-}
-
-.product__cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-bottom: 32px;
-}
-
-.product__info {
-    padding: 25px 28px 20px 16px;
-}
-
-.product__sbt {
-    font-weight: 300;
-}
-}
-
-@media screen and (min-width: 320px) and (max-width: 767px) {
-    .product {
-    margin-bottom: 85px;
-}
-
-.product__text {
-    text-align: center;
-    margin-bottom: 65px;
-}
-
-.product__cards {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 16px;
-    margin-bottom: 40px;
-}
-
-.product__card {
-    max-width: 359px;
-}
-}
-
-@media (min-width: 320px) {
-    .wrapper {
-    padding: 0
-}
-
-.product__card {
-    max-width: 320px;
-}
-}
 
