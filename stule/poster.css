@@ -1,0 +1,164 @@
+.poster {
+  background-color: #F1E4E6;
+  margin-bottom: 65px;
+}
+
+.container__poster {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.poster__left {
+  width: 50%; /* Занимает 50% ширины контейнера */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.poster__left-img {
+    max-width: 100%;
+    height: auto; 
+
+}
+
+.poster__right {
+  padding-left: 91px;
+  width: 50%;
+}
+
+.poster__right-text {
+  max-width: 437px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.poster__right-text::after {
+  position: absolute;
+  content: '';
+  width: 12px;
+  height: 93px;
+  background-color: #F16D7F;
+  left: -16px;
+  top: 12px;
+}
+
+.poster__title {
+  font-family: Lato;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 1.2;
+  color: #222222;
+  margin: 0;
+}
+
+.poster__title-big {
+  font-weight: 700;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+.poster__title-text {
+  color: #F16D7F;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container__poster {
+        display: flex;
+        align-items: center;
+    }
+
+    .poster__left {
+        width: 50%;
+    }
+
+    .poster__left-img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain; /* сохраняет пропорции */
+        transition: transform 0.3s ease;
+    }
+    .poster__left-img:hover {
+        transform: scale(1.05);
+    }
+
+    .poster__right {
+        width: 50%;
+        padding-left: 67px;
+    }
+
+    .poster__right-text {
+        max-width: 311px;
+        position: relative;
+    }
+
+    .poster__right-text::after {
+        content: "";
+        display: block;
+        width: 12px;
+        height: 92px;
+        background-color: rgba(241, 109, 127, 1);
+        position: absolute;
+        left: -11px;
+        top: 8px;
+    }
+
+    .poster__title {
+        font-size: 2.75rem; /* примерно 44px */
+        line-height: 1.2;
+    }
+
+    .poster__title-big {
+        font-size: 1.5rem;
+    }
+
+    .poster__title-text {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .poster {
+        margin-bottom: 4rem; /* заменил 65px на rem */
+    }
+
+    .poster__left {
+        display: none;
+    }
+
+    .poster__right {
+        width: 100%;
+        min-height: auto;
+        padding: 2rem 2rem;
+        box-sizing: border-box;
+    }
+
+    .poster__right-text {
+        max-width: 100%;
+        min-height: auto;
+        padding: 6rem 0 6rem 1.5rem;
+        position: relative;
+    }
+
+    .poster__right-text::after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 61px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        background-color: rgba(241, 109, 127, 1);
+    }
+
+    .poster__title {
+        font-size: 2.375rem; /* ~38px */
+        line-height: 1.1;
+    }
+
+    .poster__title-big,
+    .poster__title-text {
+        font-size: 1.25rem;
+    }
+}
