@@ -23,14 +23,14 @@
     margin-bottom: 30px;
 }
 
-/* .product__cards {
+ .product__cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 30px;
     margin-bottom: 48px;
 }
-
+/*
 .product__card {
     width: calc((100% - 60px) / 3);
     border: 1px solid rgba(248, 248, 248);
@@ -77,82 +77,81 @@
 } */
 
 .product__card {
-  width: calc((100% - 60px) / 3);
-  border: 1px solid rgba(248, 248, 248);
-  box-sizing: border-box;
-  text-align: left;
-  background-color: rgba(248, 248, 248);
-  position: relative; /* Важно для позиционирования overlay */
-  overflow: hidden;    /* Скрываем части overlay, выходящие за границы карточки */
+    width: calc((100% - 60px) / 3);
+    border: 1px solid rgba(248, 248, 248);
+    box-sizing: border-box;
+    text-align: left;
+    background-color: rgba(248, 248, 248);
+    position: relative;
+    overflow: hidden;
 }
 
 .product__image {
-  width: 100%;
-  max-height: 420px;
-  object-fit: cover;
-  margin-bottom: 10px;
-  transition: filter 0.3s ease; /* Плавное изменение фильтра */
+    width: 100%;
+    max-height: 420px;
+    /* object-fit: cover; */
+    transition: filter 0.3s ease;
 }
 
 .product__info {
-  padding: 24px 29px 24px 16px;
+    padding: 24px 29px 24px 16px;
 }
 
 .product__subtitle {
-  font-family: Lato;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 1.2;
-  margin-bottom: 5px;
+    font-family: Lato;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.2;
+    margin-bottom: 5px;
 }
 
 .product__sbt {
-  font-family: Lato;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 1.4;
-  color: rgba(93, 93, 93, 1);
-  margin-bottom: 16px;
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgba(93, 93, 93, 1);
+    margin-bottom: 16px;
 }
 
 .product__price {
-  font-family: Lato;
-  font-weight: 400;
-  font-size: 16px;
-  margin-top: 10px;
-  color: rgba(241, 109, 127, 1);
+    font-family: Lato;
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 10px;
+    color: rgba(241, 109, 127, 1);
 }
-
 /* Overlay стили (скрытый по умолчанию) */
 .product__card::before {
-  content: "Add to Cart";  /* Текст "Add to Cart" */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 400;
-  opacity: 0;           /* Скрываем overlay по умолчанию */
-  transition: opacity 0.3s ease; /* Плавное появление */
-  pointer-events: none; /* overlay не должен перехватывать клики */
+    content: "Add to Cart";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0;           /* Скрываем overlay по умолчанию */
+    transition: opacity 0.3s ease; /* Плавное появление */
+    pointer-events: none; /* overlay не должен перехватывать клики */
+    margin-top: -76px; /*Костыль! улучшить*/
 }
 
 /* Стили для иконки тележки (SVG) */
 .product__card::after {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 37%;
+    left: 37%;
     transform: translate(-50%, -50%); /* Центрируем иконку */
-    width: 30px;  /* Adjust the size as needed */
-    height: 30px; /* Adjust the size as needed */
-    /* background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"%3E%3Cpath d="M21 4H6.83L6.16 2.53A1.5 1.5 0 0 0 4.76 1H3a1 1 0 0 0 0 2h1.26l1.47 2.94A1 1 0 0 1 5.61 6H19a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-1H2v-2h4V8h13V4a1 1 0 0 0-1-1h-3.69l.91-1.82A1.5 1.5 0 0 0 16.24 1H14a1 1 0 0 0 0 2h1.26l1.47 2.94A1 1 0 0 1 16.61 6H21a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-1H2v-2h4V8h13V4a1 1 0 0 0-1-1h-3.69l.91-1.82A1.5 1.5 0 0 0 16.24 1H14a1 1 0 0 0 0 2h1.26l1.47 2.94A1 1 0 0 1 16.61 6H21a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-1H2v-2h4V8h13V4a1 1 0 0 0-1-1h-3.69l.91-1.82A1.5 1.5 0 0 0 16.24 1H14a1 1 0 0 0 0 2h1.26l1.47 2.94A1 1 0 0 1 16.61 6H21a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-1H2v-2h4V8h13V4a1 1 0 0 0-1-1h-3.69l.91-1.82A1.5 1.5 0 0 0 16.24 1H14a1 1 0 0 0 0 2h1.26l1.47 2.94A1 1 0 0 1 16.61 6H21a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-1H2v-2h4V8h13V4a1 1 0 0 0-1-1h-3.69l.91-1.82A1.5 1.5 0 0 0 16.24 1H14a1 1 0 0 0 0 2h1.26l1.47 2.94A1 1 0 0 1 16.61 6H21z" fill="white"%3E%3C/path%3E%3C/svg%3E'); */
-    background-size: contain; /* Adjust as needed */
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/Card.svg');
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0; /* Hide by default */
@@ -161,12 +160,12 @@
 
 /* При наведении на карточку: */
 .product__card:hover .product__image {
-  filter: brightness(0.5); /* Затемняем картинку */
+    filter: brightness(0.5);
 }
 
 .product__card:hover::before {
   opacity: 1; /* Показываем overlay */
-  pointer-events: auto; /* Overlay перехватывает клики */
+    pointer-events: auto;
 }
 .product__card:hover::after {
     opacity: 1; /* Показываем иконку */
