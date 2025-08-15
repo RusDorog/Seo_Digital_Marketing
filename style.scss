@@ -1,7 +1,4 @@
-$colorSitu: rgba(241, 109, 127, 1);
-$widhtSitu: 1140px;
-$colorContent: rgba(34, 34, 34, 1);
-$colorTextContent: rgba(251, 251, 251, 1);
+@import "_vars";
 
 *,
 *::before,
@@ -196,6 +193,7 @@ iframe {
 }
 }
 }
+
 
 
 .poster {
@@ -555,6 +553,224 @@ iframe {
 }
 }
 }
+}
+
+/* Общие стили для карусели (можно настроить под ваш дизайн) */
+.carousel {
+  position: relative; /* Важно для позиционирования элементов управления */
+  overflow: hidden; /* Скрываем все, что выходит за рамки карусели */
+  background-color: rgba(247, 247, 247, 1);
+}
+
+/* Стили для слайда (обертка для изображения) */
+.slide {
+  width: 100%;
+  height: auto; /* Или задайте фиксированную высоту, если нужно */
+}
+
+/* Стили для внутреннего контейнера карусели */
+.carousel-inner {
+  position: relative; /* Важно для анимации слайдов */
+  width: 100%;
+  height: auto;
+}
+
+/* Стили для каждого элемента карусели (слайда) */
+.carousel-item {
+  position: relative; /* Для абсолютно позиционированных элементов */
+  display: none; /* Скрываем все слайды, кроме активного */
+  width: 100%;
+  height: auto; /* Или задайте фиксированную высоту, если нужно */
+  transition: transform 0.5s ease-in-out; /* Плавная анимация */
+}
+
+/* Стили для активного слайда */
+.carousel-item.active {
+  display: block; /* Показываем активный слайд */
+}
+
+/* Стили для изображения внутри слайда */
+.d-block {
+  display: block; /* Заставляем изображение быть блочным элементом */
+}
+
+.w-100 {
+  width: 100%; /* Изображение занимает всю ширину контейнера */
+  height: auto; /* Высота масштабируется автоматически */
+  object-fit: contain; /* или cover в зависимости от желаемого поведения */
+  object-position: center; /* Изображение центрируется */
+  max-width: 597px; /* Ограничиваем максимальную ширину изображения */
+  max-height: 724px; /* Ограничиваем максимальную высоту изображения */
+  margin: 0 auto; /* Центрируем изображение по горизонтали */
+}
+
+/* Стили для элементов управления каруселью (стрелки) */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  width: 41px;
+  height: 41px;
+  transform: translateY(-50%);
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  width: 5%;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none !important;
+    display: flex;
+    justify-content: center;
+    width: 31px;
+    height: 31px;
+    background-color: rgba(42, 42, 42, 0.15);
+}
+
+.visually-hidden {
+  /* Это класс для скрытия текста для скринридеров */
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.detailcard {
+    position: relative;
+    max-width: 1140px;
+    border: 1px solid rgba(234, 234, 234, 1);
+    background-color: rgba(255, 255, 255, 1);
+    margin: -41px auto 128px; /* Центрируем карточку по горизонтали */
+}
+
+.detailcard::after {
+    position: absolute;
+    content:  " ";
+    background-color: rgba(239, 91, 112, 1);
+    width: 63px;
+    height: 3px;
+    opacity: 1;
+    top: 15%;
+    left: 47%;
+}
+
+.detailcard__container {
+  display: block;
+  text-align: center;
+}
+
+.detailcard__info {
+    padding: 64px 0;
+}
+
+.detailcard__title {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: rgba(241, 109, 127, 1);
+  margin-bottom: 26px;
+}
+
+.detailcard__subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  color: rgba(77, 77, 77, 1);
+  margin-bottom: 28px;
+}
+
+.detailcard__text {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4; /* Увеличиваем межстрочный интервал для читаемости */
+  text-align: center;
+  color: rgba(94, 94, 94, 1);
+  margin-bottom: 32px;
+  max-width: 50%;
+}
+
+.detailcard__sice {
+    padding: 64px 0;
+}
+
+.detailcard__sice::after {
+    position: absolute;
+    content:  " ";
+    background-color: rgba(239, 91, 112, 1);
+    border: 1px solid rgba(234, 234, 234, 1);
+    width: 642px;
+    height: 1px;
+    opacity: 1;
+    top: 57%;
+    left: 22%;
+
+}
+
+.detailcard__price {
+  font-size: 24px;
+  margin: 0;
+  color: rgba(241, 109, 127, 1); /* Добавляем цвет цены */
+}
+
+.detailcard__nav {
+  margin-bottom: 48px;
+}
+
+.detailcard__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 23px;
+  list-style: none; /* Убираем маркеры списка */
+  padding: 0; /* Убираем отступы списка по умолчанию */
+}
+
+.detailcard__link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: rgba(111, 110, 110, 1);
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.detailcard__link:hover {
+    text-decoration: underline; /* Подчеркиваем ссылку при наведении */
+}
+
+.detailcard__box {
+    display: inline-block;
+}
+
+.detailcard__submit {
+    padding: 15px 24px;
+    border: 1px solid rgba(255, 106, 106, 1);
+    display: flex;
+    align-items: center; 
+    gap: 23px;
+    text-decoration: none; /* Убираем подчеркивание у ссылки-кнопки */
+    color: rgba(0, 0, 0, 1); /* Задаем цвет текста */
+    background-color: rgba(255, 255, 255, 1); /* Задаем цвет фона */
+    cursor: pointer; /* Меняем курсор на указатель */
+}
+
+.detailcard__submit:hover {
+    background-color: rgba(241, 109, 127, 0.1); /* Меняем фон при наведении */
+}
+
+.detailcard__pik {
+  display: inline-block;
 }
 
 .product {
@@ -1330,16 +1546,15 @@ iframe {
     }
 }
 
-&__pik {
+.footer__pik {
     width: 32px;
     background-color: rgba(255, 255, 255, 1);
 }
-&__pik:hover {
+.footer__pik:hover {
     background-color: rgba(241, 109, 127, 1);
-}
-&__pik:hover path {
+}.footer__pik:hover path {
     fill: rgba(255, 255, 255, 1);
 }
-&__link:focus {
+.footer__link:focus {
     outline: none;
 }
