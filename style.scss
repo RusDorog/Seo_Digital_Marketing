@@ -1,7 +1,102 @@
-@use "./main";
+$colorSitu: rgb(241, 109, 127);
+$colorContent: rgb(34, 34, 34);
+$widgSitu: 1140px;
+$colorTextContent: rgb(251, 251, 251);
+
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    color: #000;
+    background-color: #fff;
+}
+
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+svg {
+    max-height: 100%;
+}
+
+
+button {
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+fieldset {
+    margin: 0;
+}
+
+iframe {
+    border: none;
+}
+
+.visually-hidden {
+    position: fixed;
+    transform: scale(0);
+}
+
+summary {
+    display: block;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+.wrapper {
+    margin: 0 auto;
+    padding-left: calc(50% - 1140px / 2);
+    padding-right: calc(50% - 1140px / 2);
+}
+    @media (min-width: 768px) and (max-width: 1024px) {
+    .wrapper {
+    padding: 0 16px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .wrapper {
+    padding: 0 16px;
+    }
+}
 
 .head {
-    background-color: #222222;
+    background-color: $colorContent;
     padding: 18px 0;
 
     &__container {
@@ -74,7 +169,7 @@
     width: 19px;
     height: 19px;
     border-radius: 50px;
-    background-color: rgba(241, 109, 127, 1);
+    background-color: $colorSitu;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,17 +246,16 @@
     content: '';
     width: 12px;
     height: 93px;
-    background-color: #F16D7F;
+    background-color: $colorSitu;
     left: -16px;
     top: 12px;
 }
 
 &__title {
-    font-family: Lato;
     font-weight: 900;
     font-size: 48px;
     line-height: 1.2;
-    color: #222222;
+    color: $colorContent;
     margin: 0;
 }
 
@@ -172,7 +266,7 @@
 }
 
 &__title-text {
-    color: #F16D7F;
+    color: $colorSitu;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
     &__container {
@@ -209,7 +303,7 @@
         display: block;
         width: 12px;
         height: 92px;
-        background-color: rgba(241, 109, 127, 1);
+        background-color: $colorSitu;
         position: absolute;
         left: -11px;
         top: 8px;
@@ -259,7 +353,7 @@
         top: 50%;
         left: 0;
         transform: translateY(-50%);
-        background-color: rgba(241, 109, 127, 1);
+        background-color: $colorSitu;
     }
 
     &__title {
@@ -326,19 +420,18 @@
 &__title {
     display: flex;
     flex-direction: column;
-    font-family: Lato;
     font-weight: 400;
     font-size: 16px;
     line-height: 100%;
     text-align: center;
-    color: #FFFFFF;
+    color: $colorTextContent;
     text-shadow: 2px 2px 4px #000000;
 }
 
 &__title-text {
     font-weight: 700;
     font-size: 24px;
-    color: #F16D7F;
+    color: $colorSitu;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .offer {
@@ -401,7 +494,7 @@
 }
 
 .breadcrumbs {
-    background-color: rgba(248, 243, 244, 1);
+    background-color: #f8f3f4;
     padding: 60px 0;
 
     &__container {
@@ -572,7 +665,7 @@
 .detailcard::after {
     position: absolute;
     content:  " ";
-    background-color: rgba(239, 91, 112, 1);
+    background-color: $colorSitu;
     width: 63px;
     height: 3px;
     opacity: 1;
@@ -593,7 +686,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
-  color: rgba(241, 109, 127, 1);
+  color: $colorSitu;
   margin-bottom: 26px;
 }
 
@@ -623,7 +716,7 @@
 .detailcard__sice::after {
     position: absolute;
     content:  " ";
-    background-color: rgba(239, 91, 112, 1);
+    background-color: $colorSitu;
     border: 1px solid rgba(234, 234, 234, 1);
     width: 642px;
     height: 1px;
@@ -636,7 +729,7 @@
 .detailcard__price {
   font-size: 24px;
   margin: 0;
-  color: rgba(241, 109, 127, 1); /* Добавляем цвет цены */
+  color: $colorSitu; /* Добавляем цвет цены */
 }
 
 .detailcard__nav {
@@ -670,7 +763,7 @@
 
 .detailcard__submit {
     padding: 15px 24px;
-    border: 1px solid rgba(255, 106, 106, 1);
+    border: 1px solid $colorSitu;
     display: flex;
     align-items: center; 
     gap: 23px;
@@ -688,6 +781,139 @@
   display: inline-block;
 }
 
+.filter__sort {
+    padding-top: 39px;
+    box-sizing: border-box;
+    position: relative;
+    height: 132px;
+}
+
+.filter {
+    padding-top: 13px;
+    width: 360px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+
+    &__container {
+        display: flex;
+        // justify-content: start;
+        gap: 30px;
+    }
+
+    &__content {
+        background-color: #fff;
+        padding: 0 16px 16px;
+    }
+
+    &[open] {
+        border: 1px solid rgba(235, 235, 235, 1);
+        box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+    }
+
+    &[open] .filter__heading {
+    color: $colorSitu;
+    }
+
+    &[open] path {
+        fill: $colorSitu;
+    }
+
+    &__summary {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding-left: 16px;
+}
+    &__heading {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.7px;
+    color: $colorContent;
+}
+
+    &__item {
+        margin-top: 16px;
+    }
+
+    &__head {
+        padding: 8px 11px 11px 11px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(111, 110, 110, 1);
+        border-bottom: 1px solid rgba(235, 235, 235, 1);
+        border-left: 5px solid $colorSitu;
+    }
+
+    &__item[open] .filter__head {
+        color: $colorSitu;
+    }
+
+    &__link-box {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        padding: 24px 16px;
+    }
+
+    &__link {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(111, 110, 110, 1);
+        &:hover {
+            color: $colorSitu;
+        }
+    }
+
+
+}
+
+.sort {
+    padding-top: 12px;
+    display: flex;
+    gap: 18px;
+
+    &__details {
+        position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+    &__summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+&__check {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+&__check {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(111, 110, 110, 1);
+}
+
+&__box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+    padding: 7px 30px 9px 11px;
+    position: absolute;
+    left: -9px;
+    top: 22px;
+}
+}
+
 .product {
     margin-bottom: 60px;
 
@@ -700,7 +926,7 @@
     line-height: 1.2;
     font-size: 30px;
     margin-bottom: 10px;
-    color: rgba(34, 34, 34, 1);
+    color: $colorContent;
 }
 
 &__text {
@@ -775,7 +1001,7 @@
     font-weight: 400;
     font-size: 16px;
     margin-top: 10px;
-    color: rgba(241, 109, 127, 1);
+    color: $colorSitu;
 }
 
 /* .product__card {
@@ -842,17 +1068,17 @@
 } */
 
 &__btn {
-    border: 1px solid rgba(242, 99, 118, 1);
+    border: 1px solid $colorSitu;
     background-color: transparent;
-    color: rgba(242, 99, 118, 1);
+    color: $colorSitu;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.2;
     padding: 1rem 2rem;
 }
 &__btn:hover {
-    background-color: rgba(242, 99, 118, 1);
-    color: rgba(255, 255, 255, 1);
+    background-color: $colorSitu;
+    color: $colorTextContent;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .product {
@@ -872,7 +1098,7 @@
     }
 
     &__cards {
-        background-color: #fff;
+        background-color: $colorTextContent;
         border-radius: 8px;
         overflow: hidden;
         display: grid;
@@ -928,7 +1154,7 @@
 }
 
     &__btn:hover {
-        background-color: rgba(242, 99, 118, 1);
+        background-color: $colorSitu;
         color: black;
 }
 
@@ -962,10 +1188,10 @@
         width: 100%;
         margin-left: auto;
         margin-right: auto;
-        background-color: #fff;
+        background-color: $colorTextContent;
         border-radius: 8px;
         overflow: hidden;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
     }
@@ -1001,15 +1227,13 @@
         margin-top: 14px;
         font-weight: bold;
         font-size: 1.1rem;
-        color: rgba(241, 109, 127, 1);
+        color: $colorSitu;
     }
     }
 
 
 }
 }
-
-
 
 @media (min-width: 320px) and (max-width: 767px) {
     .feature {
