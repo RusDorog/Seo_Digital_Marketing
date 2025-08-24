@@ -10,7 +10,7 @@ body {
   overflow-x: hidden;
   min-width: 320px;
   min-height: 100vh;
-  font-family: "Lato", sans-serif;
+  font-family: Lato, sans-serif;
   font-size: 16px;
   color: #000;
   background-color: #fff;
@@ -63,6 +63,14 @@ iframe {
   transform: scale(0);
 }
 
+summary {
+  display: block;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
 .wrapper {
   margin: 0 auto;
   padding-left: calc(50% - 570px);
@@ -80,7 +88,7 @@ iframe {
   }
 }
 .head {
-  background-color: #222222;
+  background-color: rgb(34, 34, 34);
   padding: 18px 0;
 }
 .head__container {
@@ -203,16 +211,15 @@ iframe {
   content: "";
   width: 12px;
   height: 93px;
-  background-color: #F16D7F;
+  background-color: rgb(241, 109, 127);
   left: -16px;
   top: 12px;
 }
 .poster__title {
-  font-family: Lato;
   font-weight: 900;
   font-size: 48px;
   line-height: 1.2;
-  color: #222222;
+  color: rgb(34, 34, 34);
   margin: 0;
 }
 .poster__title-big {
@@ -221,7 +228,7 @@ iframe {
   text-transform: uppercase;
 }
 .poster__title-text {
-  color: #F16D7F;
+  color: rgb(241, 109, 127);
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .poster__container {
@@ -352,18 +359,17 @@ iframe {
 .offer__title {
   display: flex;
   flex-direction: column;
-  font-family: Lato;
   font-weight: 400;
   font-size: 16px;
   line-height: 100%;
   text-align: center;
-  color: #FFFFFF;
+  color: rgb(251, 251, 251);
   text-shadow: 2px 2px 4px #000000;
 }
 .offer__title-text {
   font-weight: 700;
   font-size: 24px;
-  color: #F16D7F;
+  color: rgb(241, 109, 127);
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .offer .offer {
@@ -418,357 +424,8 @@ iframe {
   }
 }
 
-.breadcrumbs {
-  background-color: rgb(248, 243, 244);
-  padding: 60px 0;
-  margin-bottom: 51px;
-  /* Скрываем разделитель у первого элемента */
-}
-.breadcrumbs__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.breadcrumbs__title {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 100%;
-  color: rgb(241, 109, 127);
-}
-.breadcrumbs__nav {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 100%;
-  color: rgb(99, 99, 99);
-}
-.breadcrumbs__list {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-.breadcrumbs__link {
-  position: relative;
-}
-.breadcrumbs__link-big {
-  font-weight: 700;
-  color: rgb(241, 109, 127);
-}
-.breadcrumbs__link::after {
-  position: absolute;
-  content: "";
-  width: 11px;
-  height: 1px;
-  background-color: rgb(99, 99, 99);
-  top: 7px;
-  left: -13px;
-  rotate: 95deg;
-}
-.breadcrumbs__item:first-child .breadcrumbs__link::after {
-  display: none;
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .breadcrumbs .breadcrumbs {
-    margin-bottom: 24px;
-  }
-  .breadcrumbs .breadcrumbs__nav {
-    font-weight: 300;
-  }
-}
-@media screen and (min-width: 320px) and (max-width: 767px) {
-  .breadcrumbs .breadcrumbs {
-    padding: 24px 0 46px 0;
-    margin-bottom: 24px;
-  }
-  .breadcrumbs .breadcrumbs__container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-}
-
-/* Общие стили для карусели (можно настроить под ваш дизайн) */
-.carousel {
-  position: relative; /* Важно для позиционирования элементов управления */
-  overflow: hidden; /* Скрываем все, что выходит за рамки карусели */
-  background-color: rgb(247, 247, 247);
-}
-
-/* Стили для слайда (обертка для изображения) */
-.slide {
-  width: 100%;
-  height: auto; /* Или задайте фиксированную высоту, если нужно */
-}
-
-/* Стили для внутреннего контейнера карусели */
-.carousel-inner {
-  position: relative; /* Важно для анимации слайдов */
-  width: 100%;
-  height: auto;
-}
-
-/* Стили для каждого элемента карусели (слайда) */
-.carousel-item {
-  position: relative; /* Для абсолютно позиционированных элементов */
-  display: none; /* Скрываем все слайды, кроме активного */
-  width: 100%;
-  height: auto; /* Или задайте фиксированную высоту, если нужно */
-  transition: transform 0.5s ease-in-out; /* Плавная анимация */
-}
-
-/* Стили для активного слайда */
-.carousel-item.active {
-  display: block; /* Показываем активный слайд */
-}
-
-/* Стили для изображения внутри слайда */
-.d-block {
-  display: block; /* Заставляем изображение быть блочным элементом */
-}
-
-.w-100 {
-  width: 100%; /* Изображение занимает всю ширину контейнера */
-  height: auto; /* Высота масштабируется автоматически */
-  -o-object-fit: contain;
-     object-fit: contain; /* или cover в зависимости от желаемого поведения */
-  -o-object-position: center;
-     object-position: center; /* Изображение центрируется */
-  max-width: 597px; /* Ограничиваем максимальную ширину изображения */
-  max-height: 724px; /* Ограничиваем максимальную высоту изображения */
-  margin: 0 auto; /* Центрируем изображение по горизонтали */
-}
-
-/* Стили для элементов управления каруселью (стрелки) */
-.carousel-control-prev,
-.carousel-control-next {
-  position: absolute;
-  top: 50%;
-  width: 41px;
-  height: 41px;
-  transform: translateY(-50%);
-  text-align: center;
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
-  width: 5%;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  opacity: 1;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-image: none !important;
-  display: flex;
-  justify-content: center;
-  width: 31px;
-  height: 31px;
-  background-color: rgba(42, 42, 42, 0.15);
-}
-
-.visually-hidden {
-  /* Это класс для скрытия текста для скринридеров */
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
-.detailcard {
-  position: relative;
-  max-width: 1140px;
-  border: 1px solid rgb(234, 234, 234);
-  background-color: rgb(255, 255, 255);
-  margin: -41px auto 128px; /* Центрируем карточку по горизонтали */
-}
-
-.detailcard::after {
-  position: absolute;
-  content: " ";
-  background-color: rgb(239, 91, 112);
-  width: 63px;
-  height: 3px;
-  opacity: 1;
-  top: 15%;
-  left: 47%;
-}
-
-.detailcard__container {
-  display: block;
-  text-align: center;
-}
-
-.detailcard__info {
-  padding: 64px 0;
-}
-
-.detailcard__title {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 100%;
-  color: rgb(241, 109, 127);
-  margin-bottom: 26px;
-}
-
-.detailcard__subtitle {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 100%;
-  color: rgb(77, 77, 77);
-  margin-bottom: 28px;
-}
-
-.detailcard__text {
-  display: inline-block;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.4; /* Увеличиваем межстрочный интервал для читаемости */
-  text-align: center;
-  color: rgb(94, 94, 94);
-  margin-bottom: 32px;
-  max-width: 50%;
-}
-
-.detailcard__sice {
-  padding: 64px 0;
-}
-
-.detailcard__sice::after {
-  position: absolute;
-  content: " ";
-  background-color: rgb(239, 91, 112);
-  border: 1px solid rgb(234, 234, 234);
-  width: 642px;
-  height: 1px;
-  opacity: 1;
-  top: 57%;
-  left: 22%;
-}
-
-.detailcard__price {
-  font-size: 24px;
-  margin: 0;
-  color: rgb(241, 109, 127); /* Добавляем цвет цены */
-}
-
-.detailcard__nav {
-  margin-bottom: 48px;
-}
-
-.detailcard__list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 23px;
-  list-style: none; /* Убираем маркеры списка */
-  padding: 0; /* Убираем отступы списка по умолчанию */
-}
-
-.detailcard__link {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 100%;
-  color: rgb(111, 110, 110);
-  text-decoration: none; /* Убираем подчеркивание у ссылок */
-}
-
-.detailcard__link:hover {
-  text-decoration: underline; /* Подчеркиваем ссылку при наведении */
-}
-
-.detailcard__box {
-  display: inline-block;
-}
-
-.detailcard__submit {
-  padding: 15px 24px;
-  border: 1px solid rgb(255, 106, 106);
-  display: flex;
-  align-items: center;
-  gap: 23px;
-  text-decoration: none; /* Убираем подчеркивание у ссылки-кнопки */
-  color: rgb(0, 0, 0); /* Задаем цвет текста */
-  background-color: rgb(255, 255, 255); /* Задаем цвет фона */
-  cursor: pointer; /* Меняем курсор на указатель */
-}
-
-.detailcard__submit:hover {
-  background-color: rgba(241, 109, 127, 0.1); /* Меняем фон при наведении */
-}
-
-.detailcard__pik {
-  display: inline-block;
-}
-
 .product {
   margin-bottom: 60px;
-  /* .product__card {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      border: 1px solid rgba(248, 248, 248);
-      background-color: rgba(248, 248, 248);
-      width: calc((100% - 60px) / 3);
-      box-sizing: border-box;
-  }
-
-  .product__image {
-      width: 100%;
-      max-height: 420px;
-      object-fit: cover;
-      transition: filter 0.3s ease;
-  }
-
-  .product__card:hover .product__image {
-      filter: brightness(0.5);
-  }
-
-  .product__card::before {
-      content: "Add to Cart";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 40px;
-      width: calc(100% - 46px);
-      background-color: rgba(0,0,0,0.5);
-      color: whitesmoke;
-      font-size: 14px;
-      font-weight: 400;
-      display: flex;
-      align-items: center;
-      padding-left: 16px;
-      border: 1px solid white;
-      box-sizing: border-box;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-  }
-
-  .product__card::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      height: 40px;
-      width: 46px;
-      background-image: url('../images/Card.svg');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      border: 1px solid white;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-  }
-  .product__card:hover::before,
-  .product__card:hover::after {
-      opacity: 1;
-      pointer-events: auto;
-  } */
 }
 .product__container {
   text-align: center;
@@ -794,7 +451,6 @@ iframe {
   margin-bottom: 48px;
 }
 .product__card {
-  position: relative;
   width: calc((100% - 60px) / 3);
   border: 1px solid rgb(248, 248, 248);
   box-sizing: border-box;
@@ -803,20 +459,6 @@ iframe {
   overflow: hidden;
   cursor: pointer;
   box-sizing: border-box;
-}
-.product__card::after {
-  position: absolute;
-  contain: "";
-  width: 26px;
-  height: 24px;
-  top: 36%;
-  left: 37%;
-  background-image: url(../images/Card.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  opacity: 1;
-  transition: opacity 0.3s ease;
 }
 .product__image {
   width: 100%;
@@ -849,17 +491,17 @@ iframe {
   color: rgb(241, 109, 127);
 }
 .product__btn {
-  border: 1px solid rgb(242, 99, 118);
+  border: 1px solid rgb(241, 109, 127);
   background-color: transparent;
-  color: rgb(242, 99, 118);
+  color: rgb(241, 109, 127);
   font-weight: 400;
   font-size: 16px;
   line-height: 1.2;
   padding: 1rem 2rem;
 }
 .product__btn:hover {
-  background-color: rgb(242, 99, 118);
-  color: rgb(255, 255, 255);
+  background-color: rgb(241, 109, 127);
+  color: rgb(251, 251, 251);
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .product .product {
@@ -876,7 +518,7 @@ iframe {
     color: #555;
   }
   .product__cards {
-    background-color: #fff;
+    background-color: rgb(251, 251, 251);
     border-radius: 8px;
     overflow: hidden;
     display: grid;
@@ -924,7 +566,7 @@ iframe {
     cursor: pointer;
   }
   .product__btn:hover {
-    background-color: rgb(242, 99, 118);
+    background-color: rgb(241, 109, 127);
     color: black;
   }
 }
@@ -953,7 +595,7 @@ iframe {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    background-color: #fff;
+    background-color: rgb(251, 251, 251);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -1345,9 +987,501 @@ iframe {
     border-radius: 0 25px 25px 0;
   }
 }
+.filter__sort {
+  padding-top: 39px;
+  box-sizing: border-box;
+  position: relative;
+  height: 132px;
+}
+
+.filter {
+  padding-top: 13px;
+  width: 360px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+.filter__container {
+  display: flex;
+  gap: 30px;
+}
+.filter__content {
+  background-color: #fff;
+  padding: 0 16px 16px;
+}
+.filter[open] {
+  border: 1px solid rgb(235, 235, 235);
+  box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+}
+.filter[open] .filter__heading {
+  color: rgb(241, 109, 127);
+}
+.filter[open] path {
+  fill: rgb(241, 109, 127);
+}
+.filter__summary {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding-left: 16px;
+}
+.filter__heading {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.7px;
+  color: rgb(34, 34, 34);
+}
+.filter__item {
+  margin-top: 16px;
+}
+.filter__head {
+  padding: 8px 11px 11px 11px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgb(111, 110, 110);
+  border-bottom: 1px solid rgb(235, 235, 235);
+  border-left: 5px solid rgb(241, 109, 127);
+}
+.filter__item[open] .filter__head {
+  color: rgb(241, 109, 127);
+}
+.filter__link-box {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 24px 16px;
+}
+.filter__link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgb(111, 110, 110);
+}
+.filter__link:hover {
+  color: rgb(241, 109, 127);
+}
+
+.sort {
+  padding-top: 12px;
+  display: flex;
+  gap: 18px;
+}
+.sort__details {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.sort__summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sort__check {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.sort__check {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgb(111, 110, 110);
+}
+.sort__box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+  padding: 7px 30px 9px 11px;
+  position: absolute;
+  left: -9px;
+  top: 22px;
+}
+
+.head {
+  background-color: rgb(34, 34, 34);
+  padding: 18px 0;
+}
+.head__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.head__logo {
+  display: flex;
+  align-items: center;
+  gap: 41px;
+}
+.head__ligo-link {
+  display: block;
+}
+.head__ligo-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.head__link {
+  display: block;
+}
+.head__log-menu {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.head__list {
+  display: flex;
+  align-items: center;
+  gap: 33px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.head__link-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .head {
+    padding: 19px 16px;
+  }
+  .head__logo {
+    width: auto;
+  }
+  .head__ligo-img {
+    width: 44px;
+  }
+  .head__nav {
+    position: relative;
+  }
+  .head__nav::after {
+    position: absolute;
+    content: "5";
+    color: rgb(255, 255, 255);
+    width: 19px;
+    height: 19px;
+    border-radius: 50px;
+    background-color: rgb(241, 109, 127);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -4px;
+    left: 154px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .head {
+    padding: 18px 0;
+  }
+  .head__logo {
+    width: 100%;
+    text-align: center;
+  }
+  .head__ligo-img {
+    width: 44px;
+  }
+  .head__item:nth-child(2), .head__item:last-child {
+    display: none;
+  }
+  .head__list {
+    padding: 0;
+    margin: 0;
+  }
+}
+.breadcrumbs {
+  background-color: #f8f3f4;
+  padding: 60px 0;
+  /* Скрываем разделитель у первого элемента */
+}
+.breadcrumbs__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.breadcrumbs__title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  color: rgb(241, 109, 127);
+}
+.breadcrumbs__nav {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: rgb(99, 99, 99);
+}
+.breadcrumbs__list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.breadcrumbs__link {
+  position: relative;
+}
+.breadcrumbs__link-big {
+  font-weight: 700;
+  color: rgb(241, 109, 127);
+}
+.breadcrumbs__link::after {
+  position: absolute;
+  content: "";
+  width: 11px;
+  height: 1px;
+  background-color: rgb(99, 99, 99);
+  top: 7px;
+  left: -13px;
+  rotate: 95deg;
+}
+.breadcrumbs__item:first-child .breadcrumbs__link::after {
+  display: none;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .breadcrumbs .breadcrumbs {
+    margin-bottom: 24px;
+  }
+  .breadcrumbs .breadcrumbs__nav {
+    font-weight: 300;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .breadcrumbs .breadcrumbs {
+    padding: 24px 0 46px 0;
+    margin-bottom: 24px;
+  }
+  .breadcrumbs .breadcrumbs__container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.detailcard {
+  position: relative;
+  max-width: 1140px;
+  border: 1px solid rgb(234, 234, 234);
+  background-color: rgb(255, 255, 255);
+  margin: -41px auto 128px; /* Центрируем карточку по горизонтали */
+}
+
+.detailcard::after {
+  position: absolute;
+  content: " ";
+  background-color: rgb(241, 109, 127);
+  width: 63px;
+  height: 3px;
+  opacity: 1;
+  top: 15%;
+  left: 47%;
+}
+
+.detailcard__container {
+  display: block;
+  text-align: center;
+}
+
+.detailcard__info {
+  padding: 64px 0;
+}
+
+.detailcard__title {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: rgb(241, 109, 127);
+  margin-bottom: 26px;
+}
+
+.detailcard__subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  color: rgb(77, 77, 77);
+  margin-bottom: 28px;
+}
+
+.detailcard__text {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4; /* Увеличиваем межстрочный интервал для читаемости */
+  text-align: center;
+  color: rgb(94, 94, 94);
+  margin-bottom: 32px;
+  max-width: 50%;
+}
+
+.detailcard__sice {
+  padding: 64px 0;
+}
+
+.detailcard__sice::after {
+  position: absolute;
+  content: " ";
+  background-color: rgb(241, 109, 127);
+  border: 1px solid rgb(234, 234, 234);
+  width: 642px;
+  height: 1px;
+  opacity: 1;
+  top: 57%;
+  left: 22%;
+}
+
+.detailcard__price {
+  font-size: 24px;
+  margin: 0;
+  color: rgb(241, 109, 127); /* Добавляем цвет цены */
+}
+
+.detailcard__nav {
+  margin-bottom: 48px;
+}
+
+.detailcard__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 23px;
+  list-style: none; /* Убираем маркеры списка */
+  padding: 0; /* Убираем отступы списка по умолчанию */
+}
+
+.detailcard__link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: rgb(111, 110, 110);
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.detailcard__link:hover {
+  text-decoration: underline; /* Подчеркиваем ссылку при наведении */
+}
+
+.detailcard__box {
+  display: inline-block;
+}
+
+.detailcard__submit {
+  padding: 15px 24px;
+  border: 1px solid rgb(241, 109, 127);
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  text-decoration: none; /* Убираем подчеркивание у ссылки-кнопки */
+  color: rgb(0, 0, 0); /* Задаем цвет текста */
+  background-color: rgb(255, 255, 255); /* Задаем цвет фона */
+  cursor: pointer; /* Меняем курсор на указатель */
+}
+
+.detailcard__submit:hover {
+  background-color: rgba(241, 109, 127, 0.1); /* Меняем фон при наведении */
+}
+
+.detailcard__pik {
+  display: inline-block;
+}
+
+/* Общие стили для карусели (можно настроить под ваш дизайн) */
+.carousel {
+  position: relative; /* Важно для позиционирования элементов управления */
+  overflow: hidden; /* Скрываем все, что выходит за рамки карусели */
+  background-color: rgb(247, 247, 247);
+}
+
+/* Стили для слайда (обертка для изображения) */
+.slide {
+  width: 100%;
+  height: auto; /* Или задайте фиксированную высоту, если нужно */
+}
+
+/* Стили для внутреннего контейнера карусели */
+.carousel-inner {
+  position: relative; /* Важно для анимации слайдов */
+  width: 100%;
+  height: auto;
+}
+
+/* Стили для каждого элемента карусели (слайда) */
+.carousel-item {
+  position: relative; /* Для абсолютно позиционированных элементов */
+  display: none; /* Скрываем все слайды, кроме активного */
+  width: 100%;
+  height: auto; /* Или задайте фиксированную высоту, если нужно */
+  transition: transform 0.5s ease-in-out; /* Плавная анимация */
+}
+
+/* Стили для активного слайда */
+.carousel-item.active {
+  display: block; /* Показываем активный слайд */
+}
+
+/* Стили для изображения внутри слайда */
+.d-block {
+  display: block; /* Заставляем изображение быть блочным элементом */
+}
+
+.w-100 {
+  width: 100%; /* Изображение занимает всю ширину контейнера */
+  height: auto; /* Высота масштабируется автоматически */
+  -o-object-fit: contain;
+     object-fit: contain; /* или cover в зависимости от желаемого поведения */
+  -o-object-position: center;
+     object-position: center; /* Изображение центрируется */
+  max-width: 597px; /* Ограничиваем максимальную ширину изображения */
+  max-height: 724px; /* Ограничиваем максимальную высоту изображения */
+  margin: 0 auto; /* Центрируем изображение по горизонтали */
+}
+
+/* Стили для элементов управления каруселью (стрелки) */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  width: 41px;
+  height: 41px;
+  transform: translateY(-50%);
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  width: 5%;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none !important;
+  display: flex;
+  justify-content: center;
+  width: 31px;
+  height: 31px;
+  background-color: rgba(42, 42, 42, 0.15);
+}
+
+.visually-hidden {
+  /* Это класс для скрытия текста для скринридеров */
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
   .footer {
-    background-color: rgb(34, 34, 36);
+    background-color: rgb(34, 34, 34);
     padding: 43px 0 9px;
   }
   .footer__container {
@@ -1373,7 +1507,7 @@ iframe {
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .footer {
-    background-color: rgb(34, 34, 36);
+    background-color: rgb(34, 34, 34);
     padding: 24px 0 16px;
   }
   .footer__container {
@@ -1396,7 +1530,7 @@ iframe {
 }
 @media (min-width: 1025px) {
   .footer {
-    background-color: rgb(34, 34, 36);
+    background-color: rgb(34, 34, 34);
     padding: 24px 0 23px;
   }
   .footer__container {
@@ -1419,7 +1553,7 @@ iframe {
 }
 .footer__pik {
   width: 32px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(251, 251, 251);
 }
 
 .footer__pik:hover {
@@ -1427,7 +1561,7 @@ iframe {
 }
 
 .footer__pik:hover path {
-  fill: rgb(255, 255, 255);
+  fill: rgb(251, 251, 251);
 }
 
 .footer__link:focus {

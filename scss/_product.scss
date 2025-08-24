@@ -1,0 +1,129 @@
+@use './variables' as vars;
+@use './base';
+
+.detailcard {
+    position: relative;
+    max-width: 1140px;
+    border: 1px solid rgba(234, 234, 234, 1);
+    background-color: rgba(255, 255, 255, 1);
+    margin: -41px auto 128px; /* Центрируем карточку по горизонтали */
+}
+
+.detailcard::after {
+    position: absolute;
+    content:  " ";
+    background-color: vars.$colorSitu;
+    width: 63px;
+    height: 3px;
+    opacity: 1;
+    top: 15%;
+    left: 47%;
+}
+
+.detailcard__container {
+  display: block;
+  text-align: center;
+}
+
+.detailcard__info {
+    padding: 64px 0;
+}
+
+.detailcard__title {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: vars.$colorSitu;
+  margin-bottom: 26px;
+}
+
+.detailcard__subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  color: rgba(77, 77, 77, 1);
+  margin-bottom: 28px;
+}
+
+.detailcard__text {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4; /* Увеличиваем межстрочный интервал для читаемости */
+  text-align: center;
+  color: rgba(94, 94, 94, 1);
+  margin-bottom: 32px;
+  max-width: 50%;
+}
+
+.detailcard__sice {
+    padding: 64px 0;
+}
+
+.detailcard__sice::after {
+    position: absolute;
+    content:  " ";
+    background-color: vars.$colorSitu;
+    border: 1px solid rgba(234, 234, 234, 1);
+    width: 642px;
+    height: 1px;
+    opacity: 1;
+    top: 57%;
+    left: 22%;
+
+}
+
+.detailcard__price {
+  font-size: 24px;
+  margin: 0;
+  color: vars.$colorSitu; /* Добавляем цвет цены */
+}
+
+.detailcard__nav {
+  margin-bottom: 48px;
+}
+
+.detailcard__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 23px;
+  list-style: none; /* Убираем маркеры списка */
+  padding: 0; /* Убираем отступы списка по умолчанию */
+}
+
+.detailcard__link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: rgba(111, 110, 110, 1);
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.detailcard__link:hover {
+    text-decoration: underline; /* Подчеркиваем ссылку при наведении */
+}
+
+.detailcard__box {
+    display: inline-block;
+}
+
+.detailcard__submit {
+    padding: 15px 24px;
+    border: 1px solid vars.$colorSitu;
+    display: flex;
+    align-items: center; 
+    gap: 23px;
+    text-decoration: none; /* Убираем подчеркивание у ссылки-кнопки */
+    color: rgba(0, 0, 0, 1); /* Задаем цвет текста */
+    background-color: rgba(255, 255, 255, 1); /* Задаем цвет фона */
+    cursor: pointer; /* Меняем курсор на указатель */
+}
+
+.detailcard__submit:hover {
+    background-color: rgba(241, 109, 127, 0.1); /* Меняем фон при наведении */
+}
+
+.detailcard__pik {
+  display: inline-block;
+}

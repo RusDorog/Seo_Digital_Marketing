@@ -1,0 +1,136 @@
+@use './variables' as vars;
+@use './base';
+
+
+.filter__sort {
+    padding-top: 39px;
+    box-sizing: border-box;
+    position: relative;
+    height: 132px;
+}
+
+.filter {
+    padding-top: 13px;
+    width: 360px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+
+    &__container {
+        display: flex;
+        // justify-content: start;
+        gap: 30px;
+    }
+
+    &__content {
+        background-color: #fff;
+        padding: 0 16px 16px;
+    }
+
+    &[open] {
+        border: 1px solid rgba(235, 235, 235, 1);
+        box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+    }
+
+    &[open] .filter__heading {
+    color: vars.$colorSitu;
+    }
+
+    &[open] path {
+        fill: vars.$colorSitu;
+    }
+
+    &__summary {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding-left: 16px;
+}
+    &__heading {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.7px;
+    color: vars.$colorContent;
+}
+
+    &__item {
+        margin-top: 16px;
+    }
+
+    &__head {
+        padding: 8px 11px 11px 11px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(111, 110, 110, 1);
+        border-bottom: 1px solid rgba(235, 235, 235, 1);
+        border-left: 5px solid vars.$colorSitu;
+    }
+
+    &__item[open] .filter__head {
+        color: vars.$colorSitu;
+    }
+
+    &__link-box {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        padding: 24px 16px;
+    }
+
+    &__link {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(111, 110, 110, 1);
+        &:hover {
+            color: vars.$colorSitu;
+        }
+    }
+
+
+}
+
+.sort {
+    padding-top: 12px;
+    display: flex;
+    gap: 18px;
+
+    &__details {
+        position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+    &__summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+&__check {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+&__check {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(111, 110, 110, 1);
+}
+
+&__box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+    padding: 7px 30px 9px 11px;
+    position: absolute;
+    left: -9px;
+    top: 22px;
+}
+}
