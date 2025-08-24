@@ -1,0 +1,94 @@
+@use './variables' as vars;
+@use './base';
+
+
+/* Общие стили для карусели (можно настроить под ваш дизайн) */
+.carousel {
+  position: relative; /* Важно для позиционирования элементов управления */
+  overflow: hidden; /* Скрываем все, что выходит за рамки карусели */
+  background-color: rgba(247, 247, 247, 1);
+}
+
+/* Стили для слайда (обертка для изображения) */
+.slide {
+  width: 100%;
+  height: auto; /* Или задайте фиксированную высоту, если нужно */
+}
+
+/* Стили для внутреннего контейнера карусели */
+.carousel-inner {
+  position: relative; /* Важно для анимации слайдов */
+  width: 100%;
+  height: auto;
+}
+
+/* Стили для каждого элемента карусели (слайда) */
+.carousel-item {
+  position: relative; /* Для абсолютно позиционированных элементов */
+  display: none; /* Скрываем все слайды, кроме активного */
+  width: 100%;
+  height: auto; /* Или задайте фиксированную высоту, если нужно */
+  transition: transform 0.5s ease-in-out; /* Плавная анимация */
+}
+
+/* Стили для активного слайда */
+.carousel-item.active {
+  display: block; /* Показываем активный слайд */
+}
+
+/* Стили для изображения внутри слайда */
+.d-block {
+  display: block; /* Заставляем изображение быть блочным элементом */
+}
+
+.w-100 {
+  width: 100%; /* Изображение занимает всю ширину контейнера */
+  height: auto; /* Высота масштабируется автоматически */
+  object-fit: contain; /* или cover в зависимости от желаемого поведения */
+  object-position: center; /* Изображение центрируется */
+  max-width: 597px; /* Ограничиваем максимальную ширину изображения */
+  max-height: 724px; /* Ограничиваем максимальную высоту изображения */
+  margin: 0 auto; /* Центрируем изображение по горизонтали */
+}
+
+/* Стили для элементов управления каруселью (стрелки) */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  width: 41px;
+  height: 41px;
+  transform: translateY(-50%);
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  width: 5%;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none !important;
+    display: flex;
+    justify-content: center;
+    width: 31px;
+    height: 31px;
+    background-color: rgba(42, 42, 42, 0.15);
+}
+
+.visually-hidden {
+  /* Это класс для скрытия текста для скринридеров */
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
